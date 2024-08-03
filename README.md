@@ -1,3 +1,15 @@
+# Mi Dashboar - NEXT JS
+
+## Librerias instaladas
+
+### React Icons
+
+Iconos propios de **React**, [Documentación](https://react-icons.github.io/react-icons/)
+
+```bash
+npm install react-icons --save
+```
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
