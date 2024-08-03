@@ -4,7 +4,7 @@
 
 ### React Icons
 
-Iconos propios de **React**, [Documentación](https://react-icons.github.io/react-icons/)
+Iconos propios de **React**, consulta de [documentación](https://react-icons.github.io/react-icons/)
 
 ```bash
 npm install react-icons --save
