@@ -28,6 +28,12 @@ const menuItems = [
     title: 'Cotizador',
     subTitle: 'Cotizador de proyectos y servicios de control'
   },
+  {
+    path: '/dashboard/pokemon',
+    icon: <IoBriefcaseSharp size={40} />,
+    title: 'Pokemon',
+    subTitle: 'Catalogo de Pokemons'
+  },
 ]
 
 
@@ -36,7 +42,7 @@ export const Sidebar = () => {
 
     <div id="menu" 
       style={{ width: '400px' }}
-      className="bg-gray-900 min-h-screen z-10 text-slate-300 w-64 left-0 h-screen overflow-y-scroll">
+      className="bg-gray-900 min-h-screen z-10 text-slate-300 w-64 left-0 overflow-y-scroll">
 
 
       <div id="logo" className="my-4 px-6">
