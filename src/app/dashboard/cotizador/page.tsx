@@ -1,3 +1,9 @@
+
+export const metadata = {
+  title: 'Cotizador',
+  description: 'Página para cotización de productos y servicios',
+ };
+
 export default function Cotizador() {
     return (
       <div>

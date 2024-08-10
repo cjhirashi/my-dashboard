@@ -1,3 +1,9 @@
+
+export const metadata = {
+  title: 'Herramientas',
+  description: 'Herramientas de sistema',
+ };
+
 export default function Herramientas() {
     return (
       <div>
