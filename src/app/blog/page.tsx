@@ -1,13 +1,14 @@
+import { TitlePage } from "@/components/section";
 
 
-export default function ContactPage() {
+export default function BlogPage() {
 
     const fondoTono = '300'
  
    return (
      <>
  
-         <h1 className="text-4xl text-center font-bold text-neutral-400">Blog <small className="text-indigo-400">Page</small></h1>
+         <TitlePage name="Blog" />
  
      </>
    );

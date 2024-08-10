@@ -1,3 +1,4 @@
+import { TitlePage } from "@/components/section";
 
 
 export default function AboutPage() {
@@ -7,8 +8,8 @@ export default function AboutPage() {
    return (
      <>
  
-         <h1 className="text-4xl text-center font-bold text-neutral-400">Nosotros <small className="text-indigo-400">Page</small></h1>
- 
+      <TitlePage name="Acerca de"/>
+         
      </>
    );
  }

@@ -11,6 +11,9 @@ Iconos propios de **React**, consulta de [documentación](https://react-icons.gi
 ```bash
 npm install react-icons --save
 ```
+### Tailwind
+
+Propiedades CSS del proyecto, consulta de [documentación](https://tailwindcss.com/docs/installation)
 
 ____________________________________________________________________________________________________________
 

@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { IoBrowsersOutline, IoCalculator, IoLogoReact, IoCaretForwardCircleSharp, IoBriefcaseSharp } from 'react-icons/io5';
+import { IoBrowsersOutline, IoCalculator, IoLogoReact, IoCaretForwardCircleSharp, IoBriefcaseSharp, IoLogoElectron } from 'react-icons/io5';
 import { SidebarMenuItem } from './SidebarMenuItem';
 
 
@@ -42,21 +42,21 @@ export const Sidebar = () => {
 
     <div id="menu" 
       style={{ width: '400px' }}
-      className="bg-gray-900 min-h-screen z-10 text-slate-300 w-64 left-0 overflow-y-scroll">
+      className="bg-neutral-900 min-h-max z-10 text-neutral-400 w-64 left-0 pb-8 ">
 
 
       <div id="logo" className="my-4 px-6">
-        <h1 className="flex items-center  text-lg md:text-2xl font-bold text-white">
-          <IoLogoReact className='mr-2' />
-          <span> Dash</span> 
-          <span className="text-blue-500">8</span>.
+        <h1 className="flex items-center  text-lg md:text-2xl  text-neutro-400">
+          <IoLogoElectron className='text-amber-600' />
+           Dash
+          <span className="text-amber-600">board</span>
         </h1>
-        <p className="text-slate-500 text-sm">Manage your actions and activities</p>
+        <p className="text-neutro-700 text-sm">Herramienta de trabajo</p>
       </div>
 
 
       <div id="profile" className="px-6 py-10">
-        <p className="text-slate-500">Welcome back,</p>
+        <p className="text-neutral-500">Bienvenido de vuelta,</p>
         <a href="#" className="inline-flex space-x-2 items-center">
           <span>
             <Image className="rounded-full w-8 h-8" 
@@ -67,7 +67,7 @@ export const Sidebar = () => {
             />
           </span>
           <span className="text-sm md:text-base font-bold">
-            Fernando Herrera
+            Carlos Jiménez
           </span>
         </a>
       </div>

@@ -1,3 +1,4 @@
+import { TitlePage } from "@/components/section";
 
 
 export default function ContactPage() {
@@ -7,7 +8,7 @@ export default function ContactPage() {
   return (
     <>
 
-        <h1 className="text-4xl text-center font-bold text-neutral-400">Contacto <small className="text-indigo-400">Page</small></h1>
+        <TitlePage name="Contac" />
 
     </>
   );
