@@ -1,21 +1,22 @@
-import { Sidebar } from "@/components";
+import { Dashboard } from "@/components/dashboard";
 
 
 export default function DashboardLayout({ children }: { children: React.ReactNode; }) {
   return (
-    <div className=" w-screen min-h-max antialiased text-slate-300 selection:bg-blue-600 selection:text-white">
-        
-        <div className="flex  ">
 
-            <Sidebar />
+        
+    <div key={'dashboaurLayout'} className="flex h-screen w-screen ">
+
+      <div className="flex-none w-72 h-screen ">
+        <Dashboard />
+      </div>
             
-            <div className="p-2 w-full">
+      <div className="flex-1 h-screen overflow-y-auto">
 
-            { children }
+        { children }
 
-            </div>
-        
-        </div>
+      </div>
+  
     </div>
   );
 }

@@ -1,8 +1,24 @@
+import { DashbordHeader } from "@/components/dashboard";
+
+const encabezado = {
+  titulo: 'Principal',
+  subtitulo: '/Secuandaria',
+  description: 'Esta es una descripción de la página',
+ 
+}
 
 export default function MainPage() {
     return (
-      <div>
-        <h1>Hello Page Main</h1>
-      </div>
+      <>
+      
+        <div>
+          <DashbordHeader  {...encabezado} />
+        </div>
+
+        <div>
+          CONTENIDO
+        </div>
+
+      </>
     );
   }

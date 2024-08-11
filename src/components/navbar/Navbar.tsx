@@ -2,7 +2,7 @@
 import Link from 'next/link'
 import React from 'react'
 import { ActiveLink } from '../active-link/ActiveLink'
-import { IoLogInOutline, IoLogoElectron } from 'react-icons/io5'
+import { IoLogIn, IoLogInOutline, IoLogoElectron } from 'react-icons/io5'
 import { IconLink } from '../icons-components/IconLink'
 
 const navItems = [
@@ -15,13 +15,13 @@ const navItems = [
 const icons = [
   { 
       path: '/dashboard/main', 
-      icon: <IoLogInOutline size={30}/>, 
+      icon: <IoLogIn size={30}/>, 
   },
 ]
 
 export const Navbar = () => {
   return (
-    <nav className='flex gap-4 h-20 p-4 items-center bg-neutral-800 text-neutral-400'>
+    <nav className='flex gap-4 h-20 p-4 items-center bg-neutral-800 text-neutral-400 shadow-2xl shadow-neutral-black'>
 
         <div className='flex flex-none'>
         <IoLogoElectron size={30} className='text-amber-600'/>

@@ -1,17 +1,14 @@
 
 import Link from 'next/link';
 import React from 'react'
+import { IconLinkInterface } from './interfaces/iconLink';
 
-interface Props {
-  path: string;
-  icon: JSX.Element;
-}
 
-export const IconLink = ({path, icon}:Props) => {
+export const IconLink = ({path, icon}:IconLinkInterface) => {
 
   return (
     <>
-        <Link href={path} className={`hover:text-amber-600 `}>{icon}</Link>
+        <Link href={path} className={`hover:text-amber-600 transition-all duration-300 `}>{icon}</Link>
     </>
   )
 }

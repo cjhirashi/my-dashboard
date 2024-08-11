@@ -39,7 +39,7 @@ export const Footer = () => {
                 ))
             }
         </div>
-        <div className='flex-1 text-right'>auth: <span className='text-amber-600 font-bold'>@cjhirashi</span></div>
+        <div className='flex-1 text-right'>auth: <span className='text-amber-600 font-bold italic'>@cjhirashi</span></div>
     </div>
   )
 }

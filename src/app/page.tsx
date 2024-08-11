@@ -1,4 +1,5 @@
 
+import { Footer, Navbar } from "@/components";
 import { TitlePage } from "@/components/section";
 import { redirect } from "next/navigation";
 
@@ -15,7 +16,16 @@ export default function HomePage() {
 
   return (
     <>
+      <div className="sticky top-0">
+        <Navbar/>
+      </div>
+
       <TitlePage name="Home" />
+
+      <div>
+        <Footer/>
+      </div>
+
     </>
   );
 }
