@@ -13,17 +13,15 @@ interface Props {
 
 export const ActiveLink = ({ path, text }: Props) => {
 
-    // const pathName = usePathname();
+    const pathName = usePathname();
 
   return (
     <div>
-      Menu
-    {/* <a
-    // className={ `hover:text-amber-400 ${ ( pathName === path ) && 'text-amber-600' } font-bold` } 
-    className={ `hover:text-amber-400 font-bold` } 
+    <a
+    className={ `hover:text-amber-400 ${ ( pathName === path ) && 'text-amber-600' } font-bold` } 
     href={ path }>
         { text }
-        </a> */}
+        </a>
 
     </div>
   )

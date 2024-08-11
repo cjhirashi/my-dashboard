@@ -1,4 +1,4 @@
-import Image from 'next/image'
+
 import React from 'react'
 import { SimplePokemon } from '../interfaces/simple-pokemon'
 import { PokemonCard } from './PokemonCard';
@@ -10,7 +10,7 @@ interface Props {
 
 export const PokemonGrid = ({ pokemons }:Props) => {
   return (
-    <div className="flex flex-wrap gap-10 items-center justify-center">
+    <div className="flex flex-wrap gap-10 items-center justify-center mx-4">
         { 
             pokemons.map( pokemon => (
                 <PokemonCard key={ pokemon.id } pokemon={pokemon}/>

@@ -1,5 +1,9 @@
 import { TitlePage } from "@/components/section";
 
+export const metadata = {
+  title: 'Blog',
+  description: 'Blog del sistema',
+ };
 
 export default function BlogPage() {
 

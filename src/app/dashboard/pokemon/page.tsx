@@ -17,16 +17,14 @@ const getPokemons = async( limit = 20, offset = 0 ):Promise<SimplePokemon[]> => 
         return pokemons;
 }
 
-
-
 export default async function Pokemon() {
 
-    const pokemons = await getPokemons(160);
+    const pokemons = await getPokemons(80);
 
     return (
-      <div className="flex flex-col">
-        <span className="text-5xl text-center my-4">Listado de Pokemos <small className="text-amber-600">estático</small></span>
-        <div className="flex flex-wrap gap-10 items-center justify-center">
+      <div className="flex flex-col text-neutral-400">
+        <h1 className="text-5xl text-center my-4">Listado de Pokemos <small className="text-amber-600">estático</small></h1>
+        <div className="items-center justify-center">
           <PokemonGrid pokemons={ pokemons } />
         </div>
       </div>

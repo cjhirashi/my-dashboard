@@ -1,6 +1,11 @@
 import { SectionTitle, TitlePage } from "@/components/section";
 import Image from "next/image";
 
+export const metadata = {
+  title: 'Pruebas',
+  description: 'Página para realizar pruebas del sistema',
+ };
+
 const lista = [1,2,3,4,5,6]
 
 export default function PruebasPage() {

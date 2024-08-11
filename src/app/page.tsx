@@ -1,7 +1,11 @@
-import { Navbar } from "@/components";
+
 import { TitlePage } from "@/components/section";
-import Link from "next/link";
 import { redirect } from "next/navigation";
+
+export const metadata = {
+  title: 'Carlos Jiménez',
+  description: 'Página personal',
+ };
 
 export default function HomePage() {
 

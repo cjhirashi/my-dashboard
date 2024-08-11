@@ -21,7 +21,7 @@ const icons = [
 
 export const Navbar = () => {
   return (
-    <nav className='flex h-20 p-4 items-center bg-neutral-800 text-neutral-400'>
+    <nav className='flex gap-4 h-20 p-4 items-center bg-neutral-800 text-neutral-400'>
 
         <div className='flex flex-none'>
         <IoLogoElectron size={30} className='text-amber-600'/>
@@ -30,30 +30,22 @@ export const Navbar = () => {
         </Link>
         </div>
 
-        <div className='flex flex-1 justify-end '>
+        <div className='flex flex-1 gap-4 justify-end '>
         {
             navItems.map( navItem => (
-              <ActiveLink { ...navItem }/>
+              <ActiveLink key={ `navbar-${navItem.path}` } { ...navItem }/>
             ))
           }
         </div>
 
-        <div>
-
-        </div>
-
-        {/* <div className='flex gap-4'>
-          {
-            navItems.map( navItem => (
-              <ActiveLink { ...navItem }/>
-            ))
-          }
+        <div className='flex flex-none gap-4'>
           {
             icons.map( icon => (
-              <IconLink {...icon}/>
+              <IconLink key={ `navbar-${icon.path}` } {...icon}/>
             ))
           }
-        </div> */}
+        </div>
+
 
     </nav>
   )

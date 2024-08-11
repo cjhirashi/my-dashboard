@@ -6,18 +6,22 @@ import { IconLink } from '../icons-components/IconLink';
 const sotialNetworks = [
     { 
         path: '/#', 
+        name: 'facebook',
         icon: <FaFacebookF size={20}/>, 
     },
     { 
         path: '/#', 
+        name: 'linkedin',
         icon: <FaLinkedinIn size={20}/>, 
     },
     { 
         path: '/#', 
+        name: 'github',
         icon: <FaGithub size={20}/>, 
     },
     { 
         path: '/#', 
+        name: 'whatsapp',
         icon: <FaWhatsapp size={20}/>, 
     },
 
@@ -30,12 +34,12 @@ export const Footer = () => {
             {
                 sotialNetworks.map( icon => (
 
-                    <IconLink {...icon}/>
+                    <IconLink key={`social-${icon.name}`} {...icon}/>
 
                 ))
             }
         </div>
-        <div className='flex-1 text-right'>auth: <span className='text-amber-600'>@cjhirashi</span></div>
+        <div className='flex-1 text-right'>auth: <span className='text-amber-600 font-bold'>@cjhirashi</span></div>
     </div>
   )
 }
