@@ -4,6 +4,7 @@ import React from 'react'
 import { ActiveLink } from '../active-link/ActiveLink'
 import { IoLogIn, IoLogInOutline, IoLogoElectron } from 'react-icons/io5'
 import { IconLink } from '../icons-components/IconLink'
+import { TbLayoutDashboardFilled } from 'react-icons/tb'
 
 const navItems = [
   { path: '/about', text: 'Acerca de' },
@@ -15,7 +16,18 @@ const navItems = [
 const icons = [
   { 
       path: '/dashboard/main', 
-      icon: <IoLogIn size={30}/>, 
+      icon: <TbLayoutDashboardFilled size={30}/>, 
+      inver: true,
+  },
+  { 
+    path: '/dashboard1/main', 
+    icon: <TbLayoutDashboardFilled size={30}/>, 
+    inver: true,
+  },
+  { 
+    path: '/dashboard2/main', 
+    icon: <TbLayoutDashboardFilled size={30}/>, 
+    inver: true,
   },
 ]
 

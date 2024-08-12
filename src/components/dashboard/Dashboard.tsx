@@ -1,130 +1,68 @@
 
-import { IoBrowsersOutline, IoCalculator, IoCaretForwardCircleSharp, IoBriefcaseSharp, IoLogoElectron, IoHome, IoLogOut, IoPerson } from 'react-icons/io5';
-import { DashboarMenuItem } from './DashboardMenuItem';
+import { MenuDashboardComponent, MenuDashboardInterface } from './Menu';
+import { LogoDashboardComponent } from './Logo';
 import { IconLink } from '../icons-components/IconLink';
+import { UserDashboardComponent } from './User';
+import { IoLogoElectron } from 'react-icons/io5';
 
-const objetName = 'dashboard'
-const dataObjet = {
-    name: 'principal',
-    bacgronund: 'neutral-900',
-    color: 'neutral-400',
-    colorSoft: 'green-400',
-    colorPrimary: 'red-600'
+
+const objetName = 'Dashboard'
+
+
+export interface DashboardInterface {
+    name: string;
+    user: DashboardUser;
+    controls: DashboardControlsInterface[];
+    menu: MenuDashboardInterface[];
 }
 
-const menuItems = [
-  {
-    path: '/dashboard/main',
-    icon: <IoBrowsersOutline size={40} />,
-    title: 'Dashboard',
-    subTitle: 'Visualización'
-  },
-  {
-    path: '/dashboard/counter',
-    icon: <IoCalculator size={40} />,
-    title: 'Counter',
-    subTitle: 'Contador Client Side'
-  },
-  {
-    path: '/dashboard/herramientas',
-    icon: <IoCaretForwardCircleSharp size={40} />,
-    title: 'Herramientas',
-    subTitle: 'Herramientas de Carlos'
-  },
-  {
-    path: '/dashboard/cotizador',
-    icon: <IoBriefcaseSharp size={40} />,
-    title: 'Cotizador',
-    subTitle: 'Cotizador de proyectos y servicios de control'
-  },
-  {
-    path: '/dashboard/pokemon',
-    icon: <IoBriefcaseSharp size={40} />,
-    title: 'Pokemon',
-    subTitle: 'Catalogo de Pokemons'
-  },
-]
+export interface DashboardControlsInterface {
+    path: string;
+    name: string;
+    icon: JSX.Element;
+  }
 
-const controlesIcon = [
-  {
-    path: '/',
-    name: 'home',
-    icon: <IoHome size={30} />
-  },
-  {
-    path: '/',
-    name: 'log-out',
-    icon: <IoLogOut size={30} />
-  },
-]
+export interface DashboardUser {
+  name: string;
+  email: string;
+  position: string;
+}
 
-export const Dashboard = () => {
+export const Dashboard = ({name='name', user, controls, menu}:DashboardInterface) => {
   return (
 
-    <div id={`${objetName}-${dataObjet.name}`} 
-      className={`flex flex-col h-screen bg-neutral-900 shadow-lg shadow-black pt-4`} >
+    <div id={`${objetName}-${name}`} 
+      className={`flex flex-col h-screen  w-72 bg-neutral-900 shadow-lg shadow-black pt-4`} >
 
-      <div id={`${objetName}-${dataObjet.name}-title`}
+      <div id={`${objetName}-${name}-logo`}
         className={`flex gap-1 px-4 items-center`}>
 
-          <IoLogoElectron size={40} className={`text-amber-600`} />
-
-          <div className={`flex flex-col font-bold text-lg text-neutral-400`}>
-
-            <h1 className={`border-b-2 border-amber-600`}>
-              Carlos 
-              <span className={`text-amber-600`}> Jiménez Hirashi</span>
-            </h1>
-
-            <h2 className={`text-base font-bold italic`}>
-              Dashboard
-              <span className={`uppercase text-amber-600`}> - {dataObjet.name} </span>
-            </h2>
-
-          </div>
+        <LogoDashboardComponent name={name} />
         
       </div>
 
-      <div id={`${objetName}-${dataObjet.name}-controls`} 
+      <div id={`${objetName}-${name}-controls`} 
         className={`flex gap-4 items-center text-neutral-400 p-4 border-b border-neutral-400/30`}>
           {
-            controlesIcon.map( icono =>(
+            controls.map( icono =>(
               <IconLink key={`dasboard-prin-cntr-${icono.name}`} {...icono} />
             ))
           }
       </div>
 
-      <div id={`${objetName}-${dataObjet.name}-user`} 
+      <div id={`${objetName}-${name}-user`} 
         className={`flex-none p-4 border-b border-neutral-400/30`}>
 
-        <p className={`text-neutral-400 text-base`}>Bienvenido de vuelta...</p>
-
-        <div className={`flex gap-1 w-full items-center text-neutral-400`}>
-
-            <IoPerson size={40} className='text-amber-600'/>
-
-            <div className={`flex flex-col  w-full`}>
-
-              <h1 className={`text-base border-b-2 border-amber-600`}>
-                Carlos Jiménez Hirashi 
-              </h1>
-
-              <h2 className={`text-sm font-bold  text-neutral-400`}>
-                Director Gerneral
-              </h2>
-
-            </div>
-        
-        </div>
+        <UserDashboardComponent {...user} />
 
       </div>
 
-      <div key={`${objetName}-${dataObjet.name}-menu`} 
+      <div key={`${objetName}-${name}-menu`} 
         className='flex-1 flex flex-col overflow-y-auto border-b border-neutral-400/30'>
 
         {
-          menuItems.map( item => (
-              <DashboarMenuItem  key={ item.path } {...item} />
+          menu.map( item => (
+              <MenuDashboardComponent  key={`${objetName}-${name}-menu-boton-${item.path}`} {...item} />
           ))
         }
 
