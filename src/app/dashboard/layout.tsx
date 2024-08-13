@@ -1,9 +1,9 @@
 import { Dashboard } from "@/components/dashboard";
 import { GiSettingsKnobs } from "react-icons/gi";
-import { IoHome, IoLogoElectron, IoLogOut, IoSettings } from "react-icons/io5";
+import { IoHome, IoLogoElectron, IoLogOut, IoPerson, IoSettings } from "react-icons/io5";
 import { TbLayoutDashboardFilled } from "react-icons/tb";
 
-const nameLayout = 'Page'
+const nameLayout = 'Admin'
 
 const user = {
   name: 'Carlos Jiménez Hirashi',
@@ -51,39 +51,18 @@ const menu = [
     subtitle: 'Visualización'
   },
   {
-    name: 'Home',
-    path: '/dashboard/home',
-    icon: <GiSettingsKnobs size={40} />,
-    title: 'Inicio',
-    subtitle: 'Controlador de página Inicio'
+    name: 'Users',
+    path: '/dashboard/users',
+    icon: <IoPerson size={40} />,
+    title: 'Usuarios',
+    subtitle: 'Administración de usuarios del sistema'
   },
   {
-    name: 'About',
-    path: '/dashboard/about',
+    name: 'Pages',
+    path: '/dashboard/pages',
     icon: <GiSettingsKnobs size={40} />,
-    title: 'Acerca de',
-    subtitle: 'Controlador de página Acerca de'
-  },
-  {
-    name: 'Blog',
-    path: '/dashboard/blog',
-    icon: <GiSettingsKnobs size={40} />,
-    title: 'Blog',
-    subtitle: 'Controlador de página Blog'
-  },
-  {
-    name: 'Contact',
-    path: '/dashboard/contact',
-    icon: <GiSettingsKnobs size={40} />,
-    title: 'Contacto',
-    subtitle: 'Controlador de página Contacto'
-  },
-  {
-    name: 'Tester',
-    path: '/dashboard/tester',
-    icon: <GiSettingsKnobs size={40} />,
-    title: 'Probador',
-    subtitle: 'Controlador de página Probador'
+    title: 'Páginas',
+    subtitle: 'Administrador de páginas públicas'
   },
 ]
 

@@ -1,7 +1,7 @@
 import { DashbordHeader } from '@/components/dashboard'
 
 export const metadata = {
-  title: 'DP - Main',
+  title: 'DP1 - Main',
   description: 'Página principal de dashboard',
    };
 
@@ -11,7 +11,7 @@ const encabezado = {
   description: 'Página principal de dashboard',
 }
 
-export default function MainDasboardPage() {
+export default function MainDasboard1Page() {
   return (
     <>
 

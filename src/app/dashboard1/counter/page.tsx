@@ -2,7 +2,7 @@ import { DashbordHeader } from '@/components/dashboard'
 import { CartCounter } from '@/shopping-cart';
 
 export const metadata = {
-  title: 'DP - Contador',
+  title: 'DP1 - Contador',
   description: 'Página de prueba de un contador',
    };
 
@@ -12,7 +12,7 @@ const encabezado = {
   description: 'Página de prueba de un contador',
 }
 
-export default function ContadorDashboardPage() {
+export default function ContadorDashboard1Page() {
   return (
     <>
 

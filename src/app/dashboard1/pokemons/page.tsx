@@ -2,7 +2,7 @@ import { DashbordHeader } from '@/components/dashboard'
 import { PokemonGrid, PokemonsResponse, SimplePokemon } from "@/pokemons";
 
 export const metadata = {
-  title: 'DP - Pokemons',
+  title: 'DP1 - Pokemons',
   description: 'Catálogo de Pokemons existentes',
    };
 
@@ -24,7 +24,7 @@ const getPokemons = async( limit = 20, offset = 0 ):Promise<SimplePokemon[]> => 
         return pokemons;
 }
 
-export default async function PokemonsDashboardPage() {
+export default async function PokemonsDashboard1Page() {
 
   const pokemons = await getPokemons(80);
 

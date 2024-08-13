@@ -24,6 +24,7 @@ export const PokemonCard = ({ pokemon }:Props) => {
                     width={100}
                     height={100}
                     alt={ pokemon.name }
+                    priority={ false }
                     className='flex-1'
                 />
 
@@ -31,7 +32,7 @@ export const PokemonCard = ({ pokemon }:Props) => {
 
                  <div className="mt-5">
                     <Link
-                    href={`/dashboard/pokemon/${ id }`}
+                    href={`/dashboard1/pokemon/${ id }`}
                     className="border rounded-full py-2 px-4 text-xs font-semibold"
                     >
                         Más información
