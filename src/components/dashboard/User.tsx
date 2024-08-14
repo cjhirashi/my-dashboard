@@ -17,7 +17,7 @@ export const UserDashboardComponent = ({name,email,position}:UserDashboardInterf
         className={`flex flex-col gap-2`}>
 
         <p key={`${ objectName }-${ name }-intro`}
-            className={`text-neutral-400 text-base`}>Bienvenido de vuelta...</p>
+            className={`hidden sm:block text-neutral-400 text-base`}>Bienvenido de vuelta...</p>
 
         <div key={`${ objectName }-${ name }-data`}
             className={`flex gap-1 w-full items-center text-neutral-400`}>
@@ -26,7 +26,7 @@ export const UserDashboardComponent = ({name,email,position}:UserDashboardInterf
                 size={40} className='text-amber-600'/>
 
             <div key={`${ objectName }-${ name }-user`}
-                className={`flex flex-col  w-full`}>
+                className={`hidden sm:flex flex-col  w-full`}>
 
                 <h1 className={`text-base border-b-2 border-amber-600`}>
                     { name } 

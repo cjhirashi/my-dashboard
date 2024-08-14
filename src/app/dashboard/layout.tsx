@@ -1,9 +1,10 @@
-import { Dashboard } from "@/components/dashboard";
+import { DashboardComponent } from "@/components/dashboard";
+import { FaBloggerB } from "react-icons/fa";
 import { GiSettingsKnobs } from "react-icons/gi";
-import { IoHome, IoLogoElectron, IoLogOut, IoPerson, IoSettings } from "react-icons/io5";
+import { IoHome, IoLogoElectron, IoLogOut, IoPerson } from "react-icons/io5";
 import { TbLayoutDashboardFilled } from "react-icons/tb";
 
-const nameLayout = 'Admin'
+const layoutName = 'Admin'
 
 const user = {
   name: 'Carlos Jiménez Hirashi',
@@ -48,7 +49,7 @@ const menu = [
     path: '/dashboard/main',
     icon: <IoLogoElectron size={40} />,
     title: 'Dashboard',
-    subtitle: 'Visualización'
+    subtitle: ''
   },
   {
     name: 'Users',
@@ -64,30 +65,41 @@ const menu = [
     title: 'Páginas',
     subtitle: 'Administrador de páginas públicas'
   },
+  {
+    name: 'Blog',
+    path: '/dashboard/blog',
+    icon: <FaBloggerB size={40} />,
+    title: 'Blog',
+    subtitle: 'Administrador de páginas públicas'
+  },
 ]
 
-export default function DashboardLayout({ children }: { children: React.ReactNode; }) {
+export default function AdminDashboardLayout({ children }: { children: React.ReactNode; }) {
 
   return (
 
-    <div key={`DashboaurLayout-${nameLayout}`}
-      className={`flex h-screen w-screen`}>
+    <>
 
-      <div key={`DashboaurLayout-${nameLayout}-dashboard`}
-        className={`flex-none h-screen`}>
+      {/* Contenedor principal */}
+      <div className={`flex h-screen w-screen`}>
 
-          <Dashboard name={nameLayout} user={user} controls={controls} menu={menu} />
+        {/* SECCION: Sidebar */}
+        <div className={`flex-none h-screen`}>
 
-      </div>
+          <DashboardComponent name={layoutName} controls={controls} user={user} menu={menu} />
+
+        </div>
             
-      <div key={`DashboaurLayout-${nameLayout}-content`}
-        className={`flex-1 h-screen overflow-y-auto`}>
+        {/* SECCION: Página */}
+        <div className={`flex-1 h-screen overflow-y-auto`}>
 
-        { children }
+          { children }
 
-      </div>
+        </div>
   
-    </div>
+      </div>
+
+    </>
 
   );
 }

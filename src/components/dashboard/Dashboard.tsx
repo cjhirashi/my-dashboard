@@ -1,77 +1,84 @@
-
+import React from 'react'
+import { UserDashboardComponent, UserDashboardInterface } from './User';
 import { MenuDashboardComponent, MenuDashboardInterface } from './Menu';
 import { LogoDashboardComponent } from './Logo';
-import { IconLink } from '../icons-components/IconLink';
-import { UserDashboardComponent } from './User';
-import { IoLogoElectron } from 'react-icons/io5';
-
-
-const objetName = 'Dashboard'
-
+import { IconLink } from '../icons-components';
 
 export interface DashboardInterface {
     name: string;
-    user: DashboardUser;
-    controls: DashboardControlsInterface[];
-    menu: MenuDashboardInterface[];
+    controls?: DashboardControlsInterface[];
+    user: UserDashboardInterface;
+    menu?: MenuDashboardInterface[];
 }
 
-export interface DashboardControlsInterface {
+interface DashboardControlsInterface {
     path: string;
     name: string;
     icon: JSX.Element;
   }
 
-export interface DashboardUser {
-  name: string;
-  email: string;
-  position: string;
-}
+export const DashboardComponent = ({name='name', controls, user, menu}:DashboardInterface) => {
 
-export const Dashboard = ({name='name', user, controls, menu}:DashboardInterface) => {
   return (
+    <>
 
-    <div id={`${objetName}-${name}`} 
-      className={`flex flex-col h-screen  w-72 bg-neutral-900 shadow-lg shadow-black pt-4`} >
+        {/* Contenedor principal */}
+        <div className={`flex flex-col h-screen w-[70px] sm:w-72 bg-neutral-900 shadow-lg shadow-black pt-4 transition-all duration-700`}>
 
-      <div id={`${objetName}-${name}-logo`}
-        className={`flex gap-1 px-4 items-center`}>
+            {/* SECCION: Logo */}
+            <div className={`flex gap-1 px-4 items-center`}>
 
-        <LogoDashboardComponent name={name} />
+                <LogoDashboardComponent name={name} />
         
-      </div>
+            </div>
 
-      <div id={`${objetName}-${name}-controls`} 
-        className={`flex gap-4 items-center text-neutral-400 p-4 border-b border-neutral-400/30`}>
-          {
-            controls.map( icono =>(
-              <IconLink key={`dasboard-prin-cntr-${icono.name}`} {...icono} />
-            ))
-          }
-      </div>
+            {/* SECCION: Controles */}
+            <div className={`flex flex-col sm:flex-row gap-2 sm:gap-4 items-center text-neutral-400 p-4 border-b border-neutral-400/30`}>
+          
+                {
+                
+                    controls ?
+                    controls.map( icono =>(
+                        <IconLink key={`dasboard-prin-cntr-${icono.name}`} {...icono} />
+                    ))
+                    : <div></div>
+          
+                }
+      
+            </div>
 
-      <div id={`${objetName}-${name}-user`} 
-        className={`flex-none p-4 border-b border-neutral-400/30`}>
+            {/* SECCION: Usuario */}
+            <div className={`flex-none p-4 border-b border-neutral-400/30`}>
 
-        <UserDashboardComponent {...user} />
+                <UserDashboardComponent {...user} />
 
-      </div>
+            </div>
 
-      <div key={`${objetName}-${name}-menu`} 
-        className='flex-1 flex flex-col overflow-y-auto border-b border-neutral-400/30'>
+            {/* SECCION: Menú */}
+            <div className='flex-1 flex flex-col overflow-y-auto overflow-x-hidden border-b border-neutral-400/30'>
 
-        {
-          menu.map( item => (
-              <MenuDashboardComponent  key={`${objetName}-${name}-menu-boton-${item.path}`} {...item} />
-          ))
-        }
+                {
 
-      </div>
+                    menu ?
+                    menu.map( item => (
+                        <MenuDashboardComponent  key={`DB-${name}-BT-${item.path}`} {...item} />
+                    ))
+                    : <div></div>
 
-      <div className='flex-none flex items-center h-10 px-4 text-neutral-400'>
-        <h3>auth: <span className={`text-amber-600 font-bold italic`}>@cjhirashi</span></h3>
-      </div>
+                }
 
-    </div>
+            </div>
+
+            {/* SECCION: Autor */}
+            <div className='flex-none flex items-center h-10 px-4 text-neutral-400'>
+        
+                <h3>auth: <span className={`text-amber-600 font-bold italic`}>@cjhirashi</span></h3>
+            
+            </div>
+
+        </div>
+    
+    </>
+
   )
 }

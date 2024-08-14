@@ -1,67 +1,59 @@
-import { DashbordHeader, FooterDashboardComponent } from '@/components/dashboard'
-import { Pokemon } from '@/pokemons';
+import { HeaderDashboardComponent } from "@/components/dashboard/Header";
+import { Pokemon } from "@/pokemons";
 import { PokemonInfoComponent } from '@/pokemons/components/PokemonInfo';
-import { Metadata } from 'next';
-import Image from 'next/image';
-import { notFound } from 'next/navigation';
+import { Metadata } from "next";
+import { notFound } from "next/navigation";
 
-const dashboardName = 'Dashboar1'
-
-const encabezado = {
-  titulo: 'Pokemons',
-  subtitulo: '/Pokemon',
-  description: 'Página, detalles sobre Pokemon seleccionado',
+const pageData = {
+  name: 'Pokemon',
+  description: 'Información de Pokemon',
+  father: 'Pokemons',
+  path: '/dashboard1/pokemons',
+  dashboard: 'Dash-1'
 }
 
 interface Props {
   params: { id: string };
 }
 
-export async function generateMetadata({params}:Props): Promise<Metadata> {
+export async function generateMetadata({ params }:Props): Promise<Metadata> {
 
   try {
-    
     const { id, name } = await getPokemon(params.id);
   
     return {
-      title: `DP1 - ${id} - ${name.toUpperCase()}`,
-      description: `Información de Pokemón ${name.toUpperCase()}`,
-    }
-
-  } catch (error) {
-
-    return {
-      title: 'sin Pokemón',
-      description: 'Pokemón no encontrado'
+      title: `D1 | ${ name.toUpperCase() }`,
+      description: `Página del pokémon ${ name }`
     }
     
+  } catch (error) {
+    return {
+      title: 'Página del pokémon',
+      description: 'Culpa cupidatat ipsum magna reprehenderit ex tempor sint ad minim reprehenderit consequat sit.'
+    }
   }
-
-
 }
 
-const getPokemon = async(id:string): Promise<Pokemon> => {
+const getPokemon = async(id: string): Promise<Pokemon> => {
+
 
   try {
-    
-    const pokemon = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`,{
-      cache: 'force-cache'
-      // next:{
-      //   revalidate : 60 * 60 * 24 * 31
+    const pokemon = await fetch(`https://pokeapi.co/api/v2/pokemon/${ id }`,{
+      cache: 'force-cache'// TODO: cambiar esto en un futuro
+      // next: {
+      //   revalidate: 60 * 60 * 30 * 6
       // }
     }).then( resp => resp.json() );
   
-    return pokemon
-
-  } catch (error) {
+    return pokemon;
     
+  } catch (error) {
     notFound();
-
   }
+
 }
 
-
-export default async function PokemonDasboard1Page({params}:Props) {
+export default async function PokemonDash1Page({params}:Props) {
 
   const pokemon = await getPokemon(params.id);
 
@@ -69,35 +61,32 @@ export default async function PokemonDasboard1Page({params}:Props) {
 
     <>
 
-      <div key={`${ dashboardName }-${ encabezado.titulo }`}
-        className={`flex flex-col h-full`}>
+      {/* Contenedor principal */}
+      <div className={`flex flex-col h-full`}>
 
-        <div key={`${ dashboardName }-${ encabezado.titulo }-header`}
-          className={`flex-none`}>
+        {/* SECCION: Header */}
+        <div className={`flex-none`}>
 
-          <DashbordHeader titulo={encabezado.titulo} subtitulo={`/Pokemon - ${pokemon.name}`} description={encabezado.description} />
-
-        </div>
-
-        <div key={`${ dashboardName }-${ encabezado.titulo }-body`}
-          className={`flex-1 flex justify-center overflow-y-auto`}>
-
-          <div>
-            <PokemonInfoComponent fatherName='Página Pokemon'/>
-          </div>
+          <HeaderDashboardComponent {...pageData} />
 
         </div>
 
-        <div key={`${ dashboardName }-${ encabezado.titulo }-footer`}
-          className={`flex-none`}>
+        {/* SECCION: Body */}
+        <div className={`flex-1 flex flex-col text-neutral-400 items-center overflow-y-auto`}>
 
-          <FooterDashboardComponent name={ encabezado.titulo } />
+          <PokemonInfoComponent pokemon={pokemon} />
+
+        </div>
+
+        {/* SECCION: Footer */}
+        <div className={`flex-none`}>
+
+
 
         </div>
 
       </div>
 
     </>
-
   );
 }

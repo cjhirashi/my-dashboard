@@ -1,23 +1,23 @@
-import { Dashboard } from '@/components/dashboard';
+import { DashboardComponent } from '@/components/dashboard';
+import { FaTools } from 'react-icons/fa';
 import { GoNumber } from 'react-icons/go';
-import { IoHome, IoLogoElectron } from 'react-icons/io5';
+import { IoLogoElectron, IoHome } from 'react-icons/io5';
 import { MdCatchingPokemon } from 'react-icons/md';
-import { SiPokemon } from 'react-icons/si';
 import { TbLayoutDashboardFilled } from 'react-icons/tb';
 
-const nameLayout = 'Personal'
+const layoutName = 'Personal'
 
 const user = {
-  name: 'Carlos Jiménez Hirashi',
+  name: 'Carlos Jiménez',
   email: 'cjhirashi@gmail.com',
-  position: 'Cientifico de Datos',
+  position: '',
 }
 
 const controls = [
   {
     path: '/',
     name: 'home',
-    icon: <IoHome size={30} />,
+    icon: <IoHome size={30} />
   },
   {
     path: '/dashboard/main',
@@ -45,7 +45,7 @@ const menu = [
     path: '/dashboard1/main',
     icon: <IoLogoElectron size={40} />,
     title: 'Dashboard',
-    subtitle: 'Visualización'
+    subtitle: ''
   },
   {
     name: 'Pokemon',
@@ -61,30 +61,41 @@ const menu = [
     title: 'Contador',
     subtitle: 'Contador de valores'
   },
+  {
+    name: 'Herramientas',
+    path: '/dashboard1/herramientas',
+    icon: <FaTools size={40} />,
+    title: 'Herramientas',
+    subtitle: 'Página de herramientas varias'
+  },
 ]
 
 export default function PersonalDashboardLayout({ children }: { children: React.ReactNode; }) {
 
   return (
 
-    <div key={`DashboaurLayout-${ nameLayout }`}
-      className={`flex h-screen w-screen`}>
+    <>
 
-      <div key={`DashboaurLayout-${ nameLayout }-dashboard`}
-        className={`flex-none h-screen`}>
+      {/* Contenedor principal */}
+      <div className={`flex h-screen w-screen`}>
 
-        <Dashboard name={ nameLayout } user={ user } controls={ controls } menu={ menu } />
+        {/* SECCION: Sidebar */}
+        <div className={`flex-none h-screen`}>
+
+          <DashboardComponent name={layoutName} controls={controls} user={user} menu={menu} />
+
+        </div>
+
+        {/* SECCION: Página */}
+        <div className={`flex-1 h-screen overflow-y-auto`}>
+
+          { children }
+
+        </div>
 
       </div>
 
-      <div key={`DashboaurLayout-${ nameLayout }-content`}
-        className={`flex-1 h-screen overflow-y-auto`}>
-
-        { children }
-
-      </div>
-
-    </div>
+    </>
 
   );
 }

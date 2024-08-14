@@ -5,10 +5,10 @@ import React from 'react'
 export interface IconLinkInterface {
   path: string;
   icon: JSX.Element;
-  inver: boolean;
+  inver?: boolean;
 }
 
-export const IconLink = ({path, icon, inver=true}:IconLinkInterface) => {
+export const IconLink = ({path, icon, inver=true }:IconLinkInterface) => {
 
   return (
     <>

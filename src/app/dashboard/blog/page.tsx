@@ -1,18 +1,18 @@
 
 export const metadata = {
-  title: 'Dash-1 | Herramientas',
-  description: 'Página de herramientas varias',
+  title: 'Dash-0 | Blog',
+  description: 'Administrador del Blog de la página',
 };
 
 const pageData = {
-  name: 'Herramientas',
-  description: 'Página de herramientas varias',
+  name: 'Blog',
+  description: 'Administrador del Blog de la página',
   fatherName: '',
   path: '',
-  dashboard: 'Dash-1'
+  dashboard: 'Dash-0'
 }
 
-export default function HerramientasDash1Page() {
+export default function BlogDash0Page() {
 
   return (
 

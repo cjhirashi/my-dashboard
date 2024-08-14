@@ -1,29 +1,46 @@
-import { DashbordHeader } from '@/components/dashboard'
 
 export const metadata = {
-  title: 'DP - Main',
-  description: 'Pagina principal de dashboard',
-   };
+  title: 'Dash-2 | Principal',
+  description: 'Página de dashboard',
+};
 
-const encabezado = {
-  titulo: 'Main',
-  subtitulo: '',
-  description: 'Pagina principal de dashboard',
+const pageData = {
+  name: 'Principal',
+  description: 'Página de dashboard',
+  fatherName: '',
+  path: '',
+  dashboard: 'Dash-2'
 }
 
-export default function MainDasboardPage() {
+export default function PrincipalDash2Page() {
+
   return (
+
     <>
 
+      {/* Contenedor principal */}
       <div className={`flex flex-col h-full`}>
 
+        {/* SECCION: Header */}
         <div className={`flex-none`}>
-          <DashbordHeader {...encabezado} />
+
+
+
         </div>
 
-        <div className={`flex-1 flex justify-center `}>
-          <h1 className={`my-auto text-3xl text-neutral-400 font-bold opacity-60`}>Main
-            <small className={`text-amber-600 `}> Dasboard Page</small></h1>
+        {/* SECCION: Body */}
+        <div className={`flex-1 flex flex-col text-neutral-400 items-center overflow-y-auto`}>
+
+          <h1 className={`my-auto text-3xl text-neutral-400 font-bold opacity-60`}>{pageData.name}
+           <small className={`text-amber-600 `}> {pageData.dashboard} page</small></h1>
+
+        </div>
+
+        {/* SECCION: Footer */}
+        <div className={`flex-none`}>
+
+
+
         </div>
 
       </div>

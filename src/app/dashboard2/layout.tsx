@@ -1,13 +1,14 @@
-import { Dashboard } from '@/components/dashboard';
-import { IoBrowsersOutline, IoHome, IoLogoElectron } from 'react-icons/io5';
+import { DashboardComponent } from '@/components/dashboard';
+import { FaFileInvoiceDollar } from 'react-icons/fa';
+import { IoLogoElectron, IoHome } from 'react-icons/io5';
 import { TbLayoutDashboardFilled } from 'react-icons/tb';
 
-const nameLayout = 'Laboral'
+const layoutName = 'Laboral'
 
 const user = {
-  name: 'Carlos Jiménez Hirashi',
+  name: 'Carlos Jiménez',
   email: 'cjimenez@atomcontroles.com',
-  position: 'Director General',
+  position: '',
 }
 
 const controls = [
@@ -42,7 +43,14 @@ const menu = [
     path: '/dashboard2/main',
     icon: <IoLogoElectron size={40} />,
     title: 'Dashboard',
-    subtitle: 'Visualización'
+    subtitle: ''
+  },
+  {
+    name: 'Cotizador',
+    path: '/dashboard2/cotizador',
+    icon: <FaFileInvoiceDollar size={40} />,
+    title: 'Cotizador',
+    subtitle: 'Cotizador de servicios'
   },
 ]
 
@@ -50,24 +58,28 @@ export default function LaboralDashboardLayout({ children }: { children: React.R
 
   return (
 
-    <div key={`DashboaurLayout-${ nameLayout }`}
-      className={`flex h-screen w-screen`}>
+    <>
 
-      <div key={`DashboaurLayout-${ nameLayout }-dashboard`}
-        className={`flex-none h-screen`}>
+      {/* Contenedor principal */}
+      <div className={`flex h-screen w-screen`}>
 
-        <Dashboard name={ nameLayout } user={ user } controls={ controls } menu={ menu } />
+        {/* SECCION: Sidebar */}
+        <div className={`flex-none h-screen`}>
+
+          <DashboardComponent name={layoutName} controls={controls} user={user} menu={menu} />
+
+        </div>
+
+        {/* SECCION: Página */}
+        <div className={`flex-1 h-screen overflow-y-auto`}>
+
+          { children }
+
+        </div>
 
       </div>
 
-      <div key={`DashboaurLayout-${ nameLayout }-content`}
-        className={`flex-1 h-screen overflow-y-auto`}>
-
-        { children }
-
-      </div>
-
-    </div>
+    </>
 
   );
 }

@@ -1,56 +1,50 @@
-import { DashbordHeader } from '@/components/dashboard'
-import { CartCounter } from '@/shopping-cart';
+import { CartCounter } from "@/components/shopping-cart";
 
 export const metadata = {
-  title: 'DP1 - Contador',
-  description: 'Página de prueba de un contador',
-   };
+  title: 'Dash-1 | Contador',
+  description: 'Prueba de objeto contador',
+};
 
-const encabezado = {
-  titulo: 'Contador',
-  subtitulo: '',
-  description: 'Página de prueba de un contador',
+const pageData = {
+  name: 'Contador',
+  description: 'Prueba de objeto contador',
+  fatherName: '',
+  path: '',
+  dashboard: 'Dash-1'
 }
 
-export default function ContadorDashboard1Page() {
+export default function ContadorDash1Page() {
+
   return (
+
     <>
 
+      {/* Contenedor principal */}
       <div className={`flex flex-col h-full`}>
 
+        {/* SECCION: Header */}
         <div className={`flex-none`}>
-          <DashbordHeader {...encabezado} />
+
+
+
         </div>
 
-        <div className={`flex flex-col items-center justify-center w-full h-full`}>
-           <span>Productos en el carrito</span>
-           <CartCounter value={ 20 } />
-         </div>
+        {/* SECCION: Body */}
+        <div className={`flex-1 flex flex-col text-neutral-400 items-center overflow-y-auto`}>
+
+          <CartCounter value={ 0 } />
+
+        </div>
+
+        {/* SECCION: Footer */}
+        <div className={`flex-none`}>
+
+
+
+        </div>
 
       </div>
 
     </>
   );
 }
-
-// export default function ContadorDashboarPage() {
-//   return (
-//     <>
-
-//       <div className={`flex flex-col h-full`}>
-
-//         <div className={`flex-none`}>
-//           <DashbordHeader {...encabezado} />
-//         </div>
-
-//         <div className={`flex flex-col items-center justify-center w-full h-full`}>
-//           <span>Productos en el carrito</span>
-//           <CartCounter value={ 20 } />
-//         </div>
-
-//       </div>
-
-//     </>
-//   );
-// }
-

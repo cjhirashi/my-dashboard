@@ -16,7 +16,7 @@ export const LogoDashboardComponent = ({name}:LogoDashboardInterface) => {
       
 <IoLogoElectron size={40} className={`text-amber-600`} />
 
-<div className={`flex flex-col font-bold text-lg text-neutral-400`}>
+<div className={`hidden sm:flex flex-col font-bold text-lg text-neutral-400`}>
 
   <h1 className={`border-b-2 border-amber-600`}>
     Carlos 

@@ -1,1 +1,2 @@
 
+export { IconLink } from './IconLink'
