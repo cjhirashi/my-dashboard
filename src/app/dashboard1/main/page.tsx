@@ -1,3 +1,5 @@
+import { GridStateComponent } from '@/components/datapanels';
+import { CounterStateComponent } from '../../../components/datapanels/CounterState';
 
 export const metadata = {
   title: 'Dash-1 | Principal',
@@ -29,10 +31,9 @@ export default function PrincipalDash1Page() {
         </div>
 
         {/* SECCION: Body */}
-        <div className={`flex-1 flex flex-col text-neutral-400 items-center overflow-y-auto`}>
+        <div className={`flex-1 p-4 text-neutral-400 bg-neutral-700 overflow-y-auto`}>
 
-          <h1 className={`my-auto text-3xl text-neutral-400 font-bold opacity-60`}>{pageData.name}
-           <small className={`text-amber-600 `}> {pageData.dashboard} page</small></h1>
+           <GridStateComponent />
 
         </div>
 

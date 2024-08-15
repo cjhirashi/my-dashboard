@@ -55,6 +55,13 @@ const menu = [
     subtitle: 'Listado de Pokemons'
   },
   {
+    name: 'Favoritos',
+    path: '/dashboard1/favoritos',
+    icon: <MdCatchingPokemon size={40} />,
+    title: 'Favoritos',
+    subtitle: 'Lista de Pokemons favoritos'
+  },
+  {
     name: 'Couter',
     path: '/dashboard1/counter',
     icon: <GoNumber size={40} />,

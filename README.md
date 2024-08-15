@@ -15,6 +15,14 @@ npm install react-icons --save
 
 Propiedades CSS del proyecto, consulta de [documentación](https://tailwindcss.com/docs/installation)
 
+### Redux Toolkit y React Redux
+
+Gestor de almacenamiento interno en storage, consulta de [documentación](https://redux-toolkit.js.org/introduction/getting-started)
+
+```bash
+npm install @reduxjs/toolkit react-redux
+```
+
 ____________________________________________________________________________________________________________
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
