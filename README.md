@@ -2,6 +2,44 @@
 
 Dashboard de herramientas funcionales 
 
+## Development
+Pasos para levantar la app en desarrollo
+
+1. levantar la base de datos
+```
+docker compose up -d
+```
+
+2. inicializar Prisma
+```
+npx prisma init
+```
+
+3. Renombrar el .env.template a .env
+4. Reemplazar las variables de entorno
+
+5. Se crea el primer modelo en schema.prisma y se ejecunta una migración
+```
+npx prisma migrate dev
+```
+6. Se crea el cliente de Prisma 
+```
+npx prisma generate
+```
+7. Ejecutar el SEED para [crear la base de datos local](localhost:3000/api/seed)
+
+## Prisma
+```
+npx prisma init
+npx prisma migrate dev
+npx prisma generate
+```
+
+## Prod
+
+## Stage
+____________________________________________________________________________________________________________
+
 ## Librerias instaladas
 
 ### React Icons
@@ -21,6 +59,24 @@ Gestor de almacenamiento interno en storage, consulta de [documentación](https:
 
 ```bash
 npm install @reduxjs/toolkit react-redux
+```
+### Prisma, gestor de base de datos
+
+Gestor de base de datos con ***Postgres***
+
+Prisma comandos
+
+```
+npx prisma init
+
+npx prisma migrate dev
+```
+____________________________________________________________________________________________________________
+
+Para ejecutar archivo de docker /docker-compose.yml para la creación de base de datos
+
+```bash
+docker composer up -d
 ```
 
 ____________________________________________________________________________________________________________
