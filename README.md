@@ -18,7 +18,9 @@ npx prisma init
 3. Crear una copia del archivo .env.template a .env
 4. Asignar las variables de entorno
 5. Activar el servidor 
-```npm run dev```
+```
+npm run dev
+```
 
 6. Se crea el primer modelo en schema.prisma y se ejecunta una migración
 ```
