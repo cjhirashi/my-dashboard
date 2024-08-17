@@ -2,6 +2,7 @@ import { DashboardComponent } from '@/components/dashboard';
 import { FaTools } from 'react-icons/fa';
 import { GoNumber } from 'react-icons/go';
 import { IoLogoElectron, IoHome } from 'react-icons/io5';
+import { LuListTodo } from 'react-icons/lu';
 import { MdCatchingPokemon } from 'react-icons/md';
 import { TbLayoutDashboardFilled } from 'react-icons/tb';
 
@@ -74,6 +75,13 @@ const menu = [
     icon: <FaTools size={40} />,
     title: 'Herramientas',
     subtitle: 'Página de herramientas varias'
+  },
+  {
+    name: 'Tareas',
+    path: '/dashboard1/todos',
+    icon: <LuListTodo size={40} />,
+    title: 'Tareas',
+    subtitle: 'Página de tareas'
   },
 ]
 
