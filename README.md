@@ -71,6 +71,14 @@ npx prisma init
 
 npx prisma migrate dev
 ```
+
+### Yup 
+
+Esquemas de validación de datos para API
+
+```
+npm install yup
+```
 ____________________________________________________________________________________________________________
 
 Para ejecutar archivo de docker /docker-compose.yml para la creación de base de datos
