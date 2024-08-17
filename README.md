@@ -17,16 +17,17 @@ npx prisma init
 
 3. Crear una copia del archivo .env.template a .env
 4. Asignar las variables de entorno
+5. Activar el servidor ```npm run dev```
 
-5. Se crea el primer modelo en schema.prisma y se ejecunta una migración
+6. Se crea el primer modelo en schema.prisma y se ejecunta una migración
 ```
 npx prisma migrate dev
 ```
-6. Se crea el cliente de Prisma 
+7. Se crea el cliente de Prisma 
 ```
 npx prisma generate
 ```
-7. Ejecutar el SEED para [crear la base de datos local](localhost:3000/api/seed)
+8. Ejecutar el SEED para [crear la base de datos local](http://localhost:3000/api/seed)
 
 ## Prisma
 ```
