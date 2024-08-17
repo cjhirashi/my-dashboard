@@ -2,14 +2,14 @@
 version: '3'
 
 services:
-  todosDB:
+  sistemaDB:
     image: postgres:15.3
-    container_name: todos-db
+    container_name: sistema-db
     restart: always
     ports:
       - 5432:5432
     environment:
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=admin
     volumes:
       - ./postgres:/var/lib/postgresql/data

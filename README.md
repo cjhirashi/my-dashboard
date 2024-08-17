@@ -16,7 +16,7 @@ npx prisma init
 ```
 
 3. Crear una copia del archivo .env.template a .env
-4. Reemplazar las variables de entorno
+4. Asignar las variables de entorno
 
 5. Se crea el primer modelo en schema.prisma y se ejecunta una migración
 ```
